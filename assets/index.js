@@ -1,10 +1,6 @@
-const Model = (() => {
+const model = (() => {
   const Table = () => {
-    const t = [
-      [null, null, null],
-      [null, null, null],
-      [null, null, null]
-    ];
+    const t = [null, null, null, null, null, null, null, null, null];
     return { t };
   };
 
@@ -16,18 +12,23 @@ const Model = (() => {
   return { Table, Player };
 })();
 
-const View = () => {
-  displayBoard = () => {};
+const view = (() => {
+  const displayBoard = () => {};
   inputPlayers = () => {};
   winnerCelebration = () => {};
-};
+})();
 
-const Controller = () => {
-  inputMove;
+const controller = ((model, view) => {
+  let t = model.Table(),
+    p1 = model.Player("Name1", "X"),
+    p2 = model.Player("Anonymous", "0");
 
-  checkValidMove;
+  return { t, p1, p2 };
+  // inputMove;
 
-  checkWinner;
+  // checkValidMove;
 
-  checkEndGame;
-};
+  // checkWinner;
+
+  // checkEndGame;
+})(model, view);
