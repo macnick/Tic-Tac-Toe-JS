@@ -1,0 +1,55 @@
+html,
+body {
+  box-sizing: border-box;
+  background-color: #373666;
+  height: 100%;
+  padding: 10px;
+  margin: 0px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  grid-template-rows: auto;
+  justify-content: center;
+  /* background-color: #373666; */
+}
+.container {
+  display: grid;
+  background-color: #373666;
+  /* border: 1px solid black; */
+  /* height: 100%; */
+  width: fit-content;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: repeat(3, 90px);
+}
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+.box {
+  background: #f2e709;
+  border-radius: 4%;
+}
+.player {
+  color: #fff;
+  font-size: 2em;
+  width: 130px;
+  height: 50px;
+  padding-left: 25px;
+}
+.symbol {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #766df2;
+  width: 100px;
+  height: 100px;
+  border-radius: 4%;
+  margin-left: 25px;
+  color: #fff;
+  font-size: 5.5em;
+}
