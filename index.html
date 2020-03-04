@@ -12,6 +12,7 @@
         <div class="player">Player 1</div>
         <div class="symbol">X</div>
       </div>
+      
       <div class="container">
         <div class="box" id="0">X</div>
         <div class="box" id="1">O</div>
@@ -27,6 +28,12 @@
         <div class="player">Player 2</div>
         <div class="symbol">O</div>
       </div>
+    </div>
+    <div class="UI-container">
+      <input type="text" id='player1name' placeholder='Player1 name'>  
+      <input type="text" id='player2name' placeholder='Player2 name'>
+      <button >New game</button>
+      <button id="reset" onclick="view.reset()">Reset</button>
     </div>
     <script src="assets/index.js"></script>
   </body>

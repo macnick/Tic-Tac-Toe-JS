@@ -53,3 +53,10 @@ body {
   color: #fff;
   font-size: 5.5em;
 }
+.UI-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 15em);
+  grid-gap: 2em;
+  margin-top: 2em;
+}

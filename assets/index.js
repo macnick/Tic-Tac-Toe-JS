@@ -26,6 +26,15 @@ const view = (() => {
       }
     });
   };
+  const resetBoard = () => {
+    board = ["", "", "", "", "", "", "", "", ""];
+    count = 0;
+    gamestop = false;
+    displayBoard();
+    return board;
+  };
+
+  resetBoard();
   inputPlayers = () => {};
   winnerCelebration = () => {};
   return { displayBoard };
@@ -37,6 +46,13 @@ const controller = (() => {
     p2 = model.Player("Anonymous", "0"),
     currentPlayer = p1;
 
+  const playerTurns = marker => {
+    if (curentPlayer % 2 === 0) {
+      currentPlayer = p2;
+    }
+    currentPlayer = p1
+  }
+  playerTurns('X');
   // t.t[4] = "X";
   // t.t[2] = "O";
   view.displayBoard(t);
@@ -49,4 +65,7 @@ const controller = (() => {
   // checkWinner;
 
   // checkEndGame;
+  const checkEndGame = () => {
+    if ()
+  }
 })();
