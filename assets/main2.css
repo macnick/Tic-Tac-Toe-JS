@@ -39,29 +39,6 @@ body {
   color: var(--letter);
   border-radius: 4%;
 }
-.box:hover {
-  cursor: pointer;
-  background: var(--symbol);
-}
-.reset {
-  justify-self: center;
-}
-.reset > button {
-  height: 3em;
-  width: 7em;
-  margin-top: 2em;
-  background: var(--letter);
-  color: var(--symbol);
-  font-size: 1em;
-  font-weight: 2em;
-  border-radius: 2em;
-  border: 0;
-}
-.reset > button:hover {
-  cursor: pointer;
-  background: var(--box);
-  color: #f02d2d;
-}
 .player {
   color: var(--letter);
   font-size: 2em;
@@ -81,18 +58,10 @@ body {
   color: var(--letter);
   font-size: 5.5em;
 }
-
-/* .UI-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 15em);
-  grid-gap: 2em;
-  margin-top: 2em;
-} */
-
 #p1 {
   color: var(--box);
 }
 #p2 {
   color: var(--letter);
 }
+ 
