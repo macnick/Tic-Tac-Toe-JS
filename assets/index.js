@@ -13,9 +13,14 @@ const view = (() => {
 
   const resetBoard = () => {
     Table.t = ["", "", "", "", "", "", "", "", ""];
+    console.log(Table.t);
+    reset = document.querySelector('#reset');
     count = 0;
     freeze = false;
     displayBoard();
+    reset.addEventListener('click', {
+      alert("Hi there");
+    });
     return Table.t;
 };
   // inputPlayers = () => {};
@@ -44,6 +49,7 @@ const controller = (view => {
       currentPlayer = currentPlayer == p1 ? p2 : p1;
       view.displayBoard(t);
     }
+    alert(currentPlayer);
   };
 
   // t.t[4] = "X";
