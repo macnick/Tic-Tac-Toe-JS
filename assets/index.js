@@ -18,13 +18,15 @@ const controller = (view => {
   let t = Table(),
     p1 = Player("Macnick", "X"),
     p2 = Player("Daniel", "O"),
-    currentPlayer = p1;
+    currentPlayer = p1,
+    game = true;
 
   const addListeners = t => {
     let boxes = Array.from(document.getElementsByClassName("box"));
     boxes.forEach((box, i) => {
-      box.addEventListener("click", putSymbol, false);
+      box.addEventListener("click", putSymbol);
     });
+    document.getElementById("reset").addEventListener("click", resetBoard);
   };
 
   const highlightPlayer = () => {
@@ -38,10 +40,13 @@ const controller = (view => {
   };
 
   const putSymbol = e => {
-    if (e.target.innerHTML == "") {
+    if (e.target.innerHTML == "" && game) {
       t.t[e.target.id] = currentPlayer.getMarker();
-      // here we check if we have a winning move. Currently just alert the name
-      if (checkWinner(t.t)) alert(`Winner is ${currentPlayer.getName()}`);
+      // here we check if we have a winning move. Currently just console.log the name
+      if (checkWinner(t.t)) {
+        console.log(`Winner is ${currentPlayer.getName()}`);
+        game = false;
+      }
       view.displayBoard(t);
       // change player
       currentPlayer = currentPlayer == p1 ? p2 : p1;
@@ -72,17 +77,19 @@ const controller = (view => {
     });
     return winner;
   };
-  // t.t[4] = "X";
-  // t.t[2] = "O";
-  // t.t[0] = "X";
-  // console.log(t.t);
+
+  const resetBoard = () => {
+    t = Table();
+    currentPlayer = p1;
+    highlightPlayer();
+    view.displayBoard(t);
+    game = true;
+  };
+
   addListeners(t);
   view.displayBoard(t);
 
-  return { t, currentPlayer };
-  // inputMove;
-
-  // checkValidMove;
+  return { t, currentPlayer, resetBoard };
 
   // checkWinner;
 
