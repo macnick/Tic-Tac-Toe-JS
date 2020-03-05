@@ -40,6 +40,7 @@ const controller = (view => {
   const putSymbol = e => {
     if (e.target.innerHTML == "") {
       t.t[e.target.id] = currentPlayer.getMarker();
+      // here we check if we have a winning move. Currently just alert the name
       if (checkWinner(t.t)) alert(`Winner is ${currentPlayer.getName()}`);
       view.displayBoard(t);
       // change player

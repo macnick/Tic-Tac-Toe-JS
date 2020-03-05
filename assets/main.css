@@ -42,6 +42,35 @@ body {
   color: var(--letter);
   border-radius: 4%;
 }
+.box:nth-child(odd):hover,
+.box:nth-child(even):hover {
+  cursor: pointer;
+}
+.box:nth-child(odd):hover {
+  background: #fff;
+}
+.box:nth-child(even):hover {
+  background: #766df2;
+}
+.reset > button{
+  height: 3em;
+  width: 8em;
+  margin-top: 2em;
+  background: #fff;
+  color: #766df2;
+  font-size: 1em;
+  font-weight: 2em;
+  left: 5em;
+  position: absolute;
+  left: 39em;
+  border-radius: 2em;
+  border: 0;
+}
+.reset > button:hover {
+  cursor: pointer;
+  background: #f2e709;
+  color: #f02d2d;
+}
 .player {
   color: var(--letter);
   font-size: 2em;
@@ -60,6 +89,13 @@ body {
   margin-left: 25px;
   color: var(--letter);
   font-size: 5.5em;
+}
+.UI-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 15em);
+  grid-gap: 2em;
+  margin-top: 2em;
 }
 #p1 {
   color: var(--box);
