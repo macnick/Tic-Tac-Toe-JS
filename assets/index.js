@@ -2,12 +2,22 @@ import Player from "./player.js";
 import Table from "./board.js";
 
 const view = (() => {
+  let freeze = 0,
+      count = 0;
   const displayBoard = board => {
     let boxes = Array.from(document.getElementsByClassName("box"));
     boxes.forEach((box, i) => {
       box.innerHTML = board.t[i];
     });
   };
+
+  const resetBoard = () => {
+    Table.t = ["", "", "", "", "", "", "", "", ""];
+    count = 0;
+    freeze = false;
+    displayBoard();
+    return Table.t;
+};
   // inputPlayers = () => {};
   // winnerCelebration = () => {};
   return { displayBoard };
