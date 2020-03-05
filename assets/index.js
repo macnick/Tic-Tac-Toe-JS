@@ -8,6 +8,7 @@ const view = (() => {
       box.innerHTML = board.t[i];
     });
   };
+
   // inputPlayers = () => {};
   // winnerCelebration = () => {};
   return { displayBoard };
@@ -16,7 +17,7 @@ const view = (() => {
 const controller = (view => {
   let t = Table(),
     p1 = Player("Name1", "X"),
-    p2 = Player("Anonymous", "0"),
+    p2 = Player("Anonymous", "O"),
     currentPlayer = p1;
 
   const addListeners = t => {
@@ -26,12 +27,22 @@ const controller = (view => {
     });
   };
 
+  const highlightPlayer = () => {
+    if (currentPlayer == p1) {
+      document.getElementById("p1").style.setProperty("color", "var(--box)");
+      document.getElementById("p2").style.setProperty("color", "var(--letter)");
+    } else {
+      document.getElementById("p1").style.setProperty("color", "var(--letter)");
+      document.getElementById("p2").style.setProperty("color", "var(--box)");
+    }
+  };
+
   const putSymbol = e => {
-    console.log(e.target.innerHTML);
     if (e.target.innerHTML == "") {
       t.t[e.target.id] = currentPlayer.getMarker();
       // change player
       currentPlayer = currentPlayer == p1 ? p2 : p1;
+      highlightPlayer();
       view.displayBoard(t);
     }
   };
