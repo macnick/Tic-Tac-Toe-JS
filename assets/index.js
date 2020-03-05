@@ -16,8 +16,8 @@ const view = (() => {
 
 const controller = (view => {
   let t = Table(),
-    p1 = Player("Name1", "X"),
-    p2 = Player("Anonymous", "O"),
+    p1 = Player("Macnick", "X"),
+    p2 = Player("Daniel", "O"),
     currentPlayer = p1;
 
   const addListeners = t => {
@@ -40,13 +40,37 @@ const controller = (view => {
   const putSymbol = e => {
     if (e.target.innerHTML == "") {
       t.t[e.target.id] = currentPlayer.getMarker();
+      if (checkWinner(t.t)) alert(`Winner is ${currentPlayer.getName()}`);
+      view.displayBoard(t);
       // change player
       currentPlayer = currentPlayer == p1 ? p2 : p1;
       highlightPlayer();
-      view.displayBoard(t);
     }
   };
 
+  const checkWinner = board => {
+    const winConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [6, 4, 2]
+    ];
+    let winner = false;
+    winConditions.forEach(row => {
+      if (
+        board[row[0]] == board[row[1]] &&
+        board[row[1]] == board[row[2]] &&
+        (board[row[0]] == "X" || board[row[0]] == "O")
+      ) {
+        winner = true;
+      }
+    });
+    return winner;
+  };
   // t.t[4] = "X";
   // t.t[2] = "O";
   // t.t[0] = "X";
