@@ -90,7 +90,6 @@ body {
   color: var(--letter);
   font-size: 5.5em;
 }
-<<<<<<< HEAD
 .UI-container {
   width: 100%;
   display: grid;
@@ -98,8 +97,6 @@ body {
   grid-gap: 2em;
   margin-top: 2em;
 }
-=======
->>>>>>> 6d7e6ee9a46ddf298364cb686edc31dea2901236
 #p1 {
   color: var(--box);
 }
