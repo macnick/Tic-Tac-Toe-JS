@@ -1,7 +1,14 @@
+:root {
+  --box: #f2e709;
+  --letter: #fff;
+  --back: #373666;
+  --symbol: #766df2;
+}
+
 html,
 body {
   box-sizing: border-box;
-  background-color: #373666;
+  background-color: var(--back);
   height: 100%;
   padding: 10px;
   margin: 0px;
@@ -15,7 +22,7 @@ body {
 }
 .container {
   display: grid;
-  background-color: #373666;
+  background-color: var(--back);
   /* border: 1px solid black; */
   /* height: 100%; */
   width: fit-content;
@@ -28,10 +35,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 4.5em;
 }
 .box {
-  background: #f2e709;
+  background: var(--box);
+  color: var(--letter);
   border-radius: 4%;
 }
 .box:nth-child(odd):hover,
@@ -64,7 +72,7 @@ body {
   color: #f02d2d;
 }
 .player {
-  color: #fff;
+  color: var(--letter);
   font-size: 2em;
   width: 130px;
   height: 50px;
@@ -74,12 +82,12 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #766df2;
+  background-color: var(--symbol);
   width: 100px;
   height: 100px;
   border-radius: 4%;
   margin-left: 25px;
-  color: #fff;
+  color: var(--letter);
   font-size: 5.5em;
 }
 .UI-container {
@@ -88,4 +96,10 @@ body {
   grid-template-columns: repeat(4, 15em);
   grid-gap: 2em;
   margin-top: 2em;
+}
+#p1 {
+  color: var(--box);
+}
+#p2 {
+  color: var(--letter);
 }
