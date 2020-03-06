@@ -48,10 +48,18 @@ const controller = (view => {
         game = false;
       }
       view.displayBoard(t);
+      if (isItATie()) {
+        // give the option to start again
+        alert("It is a tie!");
+      }
       // change player
       currentPlayer = currentPlayer == p1 ? p2 : p1;
       highlightPlayer();
     }
+  };
+
+  const isItATie = () => {
+    return t.t.every(pos => pos != null);
   };
 
   const checkWinner = board => {
