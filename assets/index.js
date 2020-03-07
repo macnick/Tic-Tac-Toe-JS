@@ -9,17 +9,29 @@ const view = (() => {
     });
   };
 
-  // inputPlayers = () => {};
+  const showPlayerNames = (p1, p2) => {
+    document.getElementById("p1").innerHTML = p1.getName();
+    document.getElementById("p2").innerHTML = p2.getName();
+  };
   // winnerCelebration = () => {};
-  return { displayBoard };
+  return { displayBoard, showPlayerNames };
 })();
 
+// self-contained module
 const controller = (view => {
   let t = Table(),
-    p1 = Player("Macnick", "X"),
-    p2 = Player("Daniel", "O"),
+    p1,
+    p2,
     currentPlayer = p1,
-    game = true;
+    game = false;
+
+  const getNames = () => {
+    let player1 = document.getElementById("player1"),
+      player2 = document.getElementById("player2");
+    player1.value == "" ? (player1 = "X") : (player1 = player1.value);
+    player2.value == "" ? (player2 = "O") : (player2 = player2.value);
+    return [player1, player2];
+  };
 
   const addListeners = t => {
     let boxes = Array.from(document.getElementsByClassName("box"));
@@ -43,12 +55,11 @@ const controller = (view => {
     if (e.target.innerHTML == "" && game) {
       t.t[e.target.id] = currentPlayer.getMarker();
       // here we check if we have a winning move. Currently just console.log the name
+      view.displayBoard(t);
       if (checkWinner(t.t)) {
         console.log(`Winner is ${currentPlayer.getName()}`);
         game = false;
-      }
-      view.displayBoard(t);
-      if (isItATie()) {
+      } else if (isItATie()) {
         // give the option to start again
         alert("It is a tie!");
       }
@@ -88,7 +99,12 @@ const controller = (view => {
 
   const resetBoard = () => {
     t = Table();
+    p1 = Player(getNames()[0], "X");
+    p2 = Player(getNames()[1], "O");
     currentPlayer = p1;
+    view.showPlayerNames(p1, p2);
+    // hide the form
+    document.getElementsByClassName("namesForm")[0].style.display = "none";
     highlightPlayer();
     view.displayBoard(t);
     game = true;
