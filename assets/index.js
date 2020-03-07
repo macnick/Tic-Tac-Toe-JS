@@ -14,12 +14,13 @@ const view = (() => {
   return { displayBoard };
 })();
 
+// self-contained module
 const controller = (view => {
   let t = Table(),
     p1 = Player("Macnick", "X"),
     p2 = Player("Daniel", "O"),
     currentPlayer = p1,
-    game = true;
+    game = false;
 
   const addListeners = t => {
     let boxes = Array.from(document.getElementsByClassName("box"));

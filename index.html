@@ -7,7 +7,37 @@
     <title>Tic Tac Toe Game</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="namesForm">
+      <div class="playerNames visible">
+        <div>
+          <input
+            id="player1"
+            type="text"
+            maxlength="10"
+            placeholder="Player 1 Name"
+          />
+        </div>
+        <div>
+          <input
+            id="player2"
+            type="text"
+            maxlength="10"
+            placeholder="Player 2 Name"
+          />
+        </div>
+      </div>
+      <!-- <div class="btns">
+        <div>
+          <button id="playButton">Play</button>
+        </div>
+        <div>
+          <button id="restart" class="invisible">Next Game</button>
+        </div>
+      </div>
+      <button id="refresh" class="invisible"></button> -->
+    </div>
+
+    <div class="game">
       <div class="left">
         <div class="player" id="p1">Player 1</div>
         <div class="symbol">X</div>
@@ -30,7 +60,7 @@
       </div>
       <div class="left2ndrow"></div>
       <div class="reset">
-        <button id="reset">Reset</button>
+        <button id="reset">Start Game</button>
       </div>
     </div>
     <script src="assets/index.js" type="module"></script>
