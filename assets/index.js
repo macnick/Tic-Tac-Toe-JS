@@ -17,8 +17,12 @@ const view = (() => {
       .getElementById("player2")
       .setAttribute("placeholder", p2.getName());
   };
+  showModal: () => {
+    const f = document.getElementsByClassName('modal-popup');
+    f[0].style.display = 'block';
+  }
   // winnerCelebration = () => {};
-  return { displayBoard, showPlayerNames };
+  return { displayBoard, showPlayerNames, showModal };
 })();
 
 // self-contained module

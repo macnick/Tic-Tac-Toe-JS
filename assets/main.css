@@ -38,15 +38,6 @@ body {
   justify-self: center;
   justify-content: center;
 }
-
-/* input[type="text"] {
-  width: 90%;
-  padding: 3px 5px;
-  margin: 6px 10px;
-  border: 1px solid #ccc;
-  font-size: 1.5em;
-} */
-
 /* testing  */
 
 .container {
@@ -82,7 +73,9 @@ body {
   margin-top: 2em;
   background: var(--letter);
   color: var(--symbol);
-  font-size: 1.5em;
+  font-size: 1.8em;
+  font-weight: bolder;
+  font-family: "Oxanium", cursive;
   font-weight: 2em;
   border-radius: 4%;
   border: 0;
@@ -124,4 +117,13 @@ body {
   font-family: "Oxanium", cursive;
   font-size: 1em;
   color: var(--letter);
+}
+.modal-popup {
+  display: none;
+  height: 20em;
+  width: 100%;
+  background: gray;
+  position: relative;
+  top: -80%;
+  z-index: 1;
 }
