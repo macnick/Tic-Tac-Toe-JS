@@ -10,8 +10,12 @@ const view = (() => {
   };
 
   const showPlayerNames = (p1, p2) => {
-    document.getElementById("p1").innerHTML = p1.getName();
-    document.getElementById("p2").innerHTML = p2.getName();
+    document
+      .getElementById("player1")
+      .setAttribute("placeholder", p1.getName());
+    document
+      .getElementById("player2")
+      .setAttribute("placeholder", p2.getName());
   };
   // winnerCelebration = () => {};
   return { displayBoard, showPlayerNames };
@@ -39,15 +43,24 @@ const controller = (view => {
       box.addEventListener("click", putSymbol);
     });
     document.getElementById("reset").addEventListener("click", resetBoard);
+    document.getElementById("play").addEventListener("click", newGame);
   };
 
   const highlightPlayer = () => {
     if (currentPlayer == p1) {
-      document.getElementById("p1").style.setProperty("color", "var(--box)");
-      document.getElementById("p2").style.setProperty("color", "var(--letter)");
+      document
+        .getElementById("player1")
+        .style.setProperty("color", "var(--box)");
+      document
+        .getElementById("player2")
+        .style.setProperty("color", "var(--letter)");
     } else {
-      document.getElementById("p1").style.setProperty("color", "var(--letter)");
-      document.getElementById("p2").style.setProperty("color", "var(--box)");
+      document
+        .getElementById("player1")
+        .style.setProperty("color", "var(--letter)");
+      document
+        .getElementById("player2")
+        .style.setProperty("color", "var(--box)");
     }
   };
 
@@ -104,11 +117,26 @@ const controller = (view => {
     currentPlayer = p1;
     view.showPlayerNames(p1, p2);
     // hide the form
-    document.getElementsByClassName("namesForm")[0].style.display = "none";
+    // document.getElementById("form").classList.remove("scale-in");
+    // document.getElementById("form").classList.add("scale-out");
+    // document.getElementsByClassName("namesForm")[0].style.display = "none";
     highlightPlayer();
     view.displayBoard(t);
     game = true;
   };
+
+  // const newGame = () => {
+  //   document.getElementById("form").classList.remove("scale-out");
+  //   document.getElementById("form").classList.add("scale-in");
+  //   p1 = Player(getNames()[0], "X");
+  //   p2 = Player(getNames()[1], "O");
+  //   t = Table();
+  //   currentPlayer = p1;
+  //   view.showPlayerNames(p1, p2);
+  //   highlightPlayer();
+  //   view.displayBoard(t);
+  //   game = true;
+  // };
 
   addListeners(t);
   view.displayBoard(t);
