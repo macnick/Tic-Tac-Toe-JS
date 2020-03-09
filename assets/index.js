@@ -116,34 +116,13 @@ const controller = (view => {
     p2 = Player(getNames()[1], "O");
     currentPlayer = p1;
     view.showPlayerNames(p1, p2);
-    // hide the form
-    // document.getElementById("form").classList.remove("scale-in");
-    // document.getElementById("form").classList.add("scale-out");
-    // document.getElementsByClassName("namesForm")[0].style.display = "none";
     highlightPlayer();
     view.displayBoard(t);
     game = true;
   };
 
-  // const newGame = () => {
-  //   document.getElementById("form").classList.remove("scale-out");
-  //   document.getElementById("form").classList.add("scale-in");
-  //   p1 = Player(getNames()[0], "X");
-  //   p2 = Player(getNames()[1], "O");
-  //   t = Table();
-  //   currentPlayer = p1;
-  //   view.showPlayerNames(p1, p2);
-  //   highlightPlayer();
-  //   view.displayBoard(t);
-  //   game = true;
-  // };
-
   addListeners(t);
   view.displayBoard(t);
 
   return { t, currentPlayer, resetBoard };
-
-  // checkWinner;
-
-  // checkEndGame;
 })(view);
