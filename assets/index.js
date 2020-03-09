@@ -18,12 +18,12 @@ const view = (() => {
       .setAttribute("placeholder", p2.getName());
   };
   const showModal = () => {
-    const f = document.getElementsByClassName('modal-popup');
-    f[0].style.display = 'block';
+    const m = document.getElementsByClassName('modal-popup');
+    m[0].style.display = 'block';
   },
   const closeModal = () => {
-    const f = document.getElementsByClassName('modal-popup');
-    f[0].style.display = 'none';
+    const m = document.getElementsByClassName('modal-popup');
+    m[0].style.display = 'none';
   }
   // winnerCelebration = () => {};
   return { displayBoard, showPlayerNames, showModal };
