@@ -26,7 +26,7 @@ const view = (() => {
     m[0].style.display = 'none';
   }
   // winnerCelebration = () => {};
-  return { displayBoard, showPlayerNames, showModal };
+  return { displayBoard, showPlayerNames, showModal, closeModal };
 })();
 
 // self-contained module
