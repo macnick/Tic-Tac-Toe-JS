@@ -119,11 +119,25 @@ body {
   color: var(--letter);
 }
 .modal-popup {
-  display: none;
-  height: 20em;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-content: center;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.message {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 50px 16px 0 16px;
+  border-radius: 4%;
   width: 100%;
-  background: gray;
-  position: relative;
-  top: -80%;
-  z-index: 1;
+  height: 200px;
+  color: var(--letter);
+  font-size: 5em;
 }

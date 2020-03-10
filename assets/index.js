@@ -24,9 +24,10 @@ const view = (() => {
     });
   };
 
-  const showModal = () => {
+  const showModal = msg => {
     const m = document.getElementsByClassName("modal-popup");
-    m[0].style.display = "block";
+    m[0].style.display = "grid";
+    document.getElementById("message").innerHTML = msg;
   };
 
   const closeModal = () => {
@@ -39,7 +40,7 @@ const view = (() => {
       document.getElementById(i).style.color = "var(--letter)";
     }
   };
-  // winnerCelebration = () => {};
+
   return {
     displayBoard,
     showPlayerNames,
@@ -72,7 +73,7 @@ const controller = (view => {
       box.addEventListener("click", putSymbol);
     });
     document.getElementById("reset").addEventListener("click", resetBoard);
-    // document.getElementById("play").addEventListener("click", newGame);
+    document.getElementById("modal").addEventListener("click", view.closeModal);
   };
 
   const highlightPlayer = () => {
@@ -99,11 +100,12 @@ const controller = (view => {
       // here we check if we have a winning move. Currently just console.log the name
       view.displayBoard(t);
       if (checkWinner(t.t)) {
-        console.log(`Winner is ${currentPlayer.getName()}`);
+        let msg = `Winner is ${currentPlayer.getName()}!`;
+        view.showModal(msg);
         game = false;
       } else if (isItATie()) {
-        // give the option to start again
-        alert("It is a tie!");
+        let msg = "It is a tie!";
+        view.showModal(msg);
       }
       // change player
       currentPlayer = currentPlayer == p1 ? p2 : p1;
