@@ -12,11 +12,11 @@
 
 ## Screenshots
 
-### Big Screen with pop up form
-<img src="assets/images/main.PNG" alt="SCREEN with pop up form" >
+### Big Screen with winner message
+<img src="assets/images/tic2.PNG" alt="SCREEN with winner message" >
 
 ### Big Screen
-<img src="assets/images/bigS.PNG" alt="big screen" >
+<img src="assets/images/tic.PNG" alt="game UI" >
 
 ### Medium Screen
 <img src="assets/images/mdS.PNG" alt="medium screen" >
