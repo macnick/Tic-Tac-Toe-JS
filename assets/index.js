@@ -17,16 +17,37 @@ const view = (() => {
       .getElementById("player2")
       .setAttribute("placeholder", p2.getName());
   };
+
+  const showWinningComb = row => {
+    row.forEach(box => {
+      document.getElementById(box).style.color = "#f00";
+    });
+  };
+
   const showModal = () => {
-    const m = document.getElementsByClassName('modal-popup');
-    m[0].style.display = 'block';
-  },
+    const m = document.getElementsByClassName("modal-popup");
+    m[0].style.display = "block";
+  };
+
   const closeModal = () => {
-    const m = document.getElementsByClassName('modal-popup');
-    m[0].style.display = 'none';
-  }
+    const m = document.getElementsByClassName("modal-popup");
+    m[0].style.display = "none";
+  };
+
+  const resetColors = () => {
+    for (let i = 0; i < 9; i++) {
+      document.getElementById(i).style.color = "var(--letter)";
+    }
+  };
   // winnerCelebration = () => {};
-  return { displayBoard, showPlayerNames, showModal, closeModal };
+  return {
+    displayBoard,
+    showPlayerNames,
+    showModal,
+    closeModal,
+    showWinningComb,
+    resetColors
+  };
 })();
 
 // self-contained module
@@ -51,7 +72,7 @@ const controller = (view => {
       box.addEventListener("click", putSymbol);
     });
     document.getElementById("reset").addEventListener("click", resetBoard);
-    document.getElementById("play").addEventListener("click", newGame);
+    // document.getElementById("play").addEventListener("click", newGame);
   };
 
   const highlightPlayer = () => {
@@ -113,6 +134,7 @@ const controller = (view => {
         (board[row[0]] == "X" || board[row[0]] == "O")
       ) {
         winner = true;
+        view.showWinningComb(row);
       }
     });
     return winner;
@@ -126,6 +148,7 @@ const controller = (view => {
     view.showPlayerNames(p1, p2);
     highlightPlayer();
     view.displayBoard(t);
+    view.resetColors();
     game = true;
   };
 
