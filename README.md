@@ -18,9 +18,6 @@
 ### Big Screen
 <img src="assets/images/tic.PNG" alt="game UI" >
 
-### Medium Screen
-<img src="assets/images/mdS.PNG" alt="medium screen" >
-
 
 ## Built With
 
@@ -30,7 +27,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/addod19/BookStoreLibrary/library/index.html)
+[Live Demo Link](https://raw.githack.com/macnick/Tic-Tac-Toe-JS/modules/index.html)
 
 
 ## Getting Started
