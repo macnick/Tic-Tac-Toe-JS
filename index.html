@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxanium&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe Game</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Tic Tac Toe</h1>
+    </div>
+
+    <div class="game">
+      <div class="left">
+        <div class="player" id="p1">
+          <input
+            id="player1"
+            type="text"
+            maxlength="10"
+            placeholder="Player 1"
+          />
+        </div>
+        <div class="symbol">X</div>
+      </div>
+
+      <div class="container">
+        <div class="box" id="0"></div>
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+        <div class="box" id="8"></div>
+      </div>
+      <div class="right">
+        <div class="player" id="p2">
+          <input
+            id="player2"
+            type="text"
+            maxlength="10"
+            placeholder="Player 2"
+          />
+        </div>
+        <div class="symbol">O</div>
+      </div>
+      <div class="left2ndrow"></div>
+      <div class="reset">
+        <button id="reset">Play</button>
+      </div>
+    </div>
+    <div class="modal-popup" id="modal">
+      <div class="message" id="message">
+        placeholder text
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/index.js" type="module"></script>
+  </body>
+</html>
