@@ -10,7 +10,7 @@
     "url": "git+https://github.com/macnick/Tic-Tac-Toe-JS.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nick Haralampopoulos <nick@macexperts.gr>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/macnick/Tic-Tac-Toe-JS/issues"
