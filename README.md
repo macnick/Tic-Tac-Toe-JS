@@ -27,7 +27,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/macnick/Tic-Tac-Toe-JS/modules/index.html)
+[Live Demo Link](https://macnick.github.io/Tic-Tac-Toe-JS/)
 
 
 ## Getting Started
