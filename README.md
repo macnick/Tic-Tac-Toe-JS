@@ -38,6 +38,10 @@ To get a local copy up and running follow these simple example steps.
 2. Open the index.html with your favorite browser
 3. Enjoy the game
 
+## Future Features
+
+Add a scoring system
+
 ### Prerequisites
 
 - A modern browser
